@@ -1,22 +1,21 @@
-# Exercise 1.3: Variables & Data Structures
-# TODO: Complète ce fichier pour passer les tests.
+
 
 def main():
     # 1) Inputs (respecte exactement les prompts)
-    name = input("Enter full name: ")
-    city = input("Enter city: ")
-    birth_year = int(input("Enter birth year: "))
-    current_year = int(input("Enter current year: "))
-    foods_raw = input("Enter favorite foods (comma-separated): ")
+    name = input("Entrer le Nom complet : ")
+    city = input("Entrer la ville: ")
+    birth_year = int(input("Entrer l'année de naissance: "))
+    current_year = int(input("Entrer l'année actuelle: "))
+    foods_raw = input("Entrer vos aliments préférés : ")
 
-    # 2) Variables & structures de données (TODO)
-    age = 0  # TODO: current_year - birth_year
+    # 2) Variables & structures de données
+    age =  current_year - birth_year
+    foods_list = [food.strip() for food in foods_raw.split(',')]
+    foods_set = set(foods_list)
 
-    foods_list = []  # TODO: split foods_raw by ',' then strip each element
-    foods_set = set()  # TODO: set(foods_list)
+    profile_dict = {'name': name, 'city': city, 'age': age, 'foods': foods_list}
 
-    profile_dict = {}  # TODO: {'name': name, 'city': city, 'age': age, 'foods': foods_list}
-    summary_tuple = tuple()  # TODO: (name, age, city)
+    summary_tuple = (name, age, city)
 
     # 3) Output (garde exactement ces libellés)
     print("--------------------")
